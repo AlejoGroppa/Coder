@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import Template, Context
+from django.template import Context
+from django.template import loader
 from familia.models import Persona
 
 
@@ -8,14 +9,11 @@ def listadoPersonas(self):
     lista = Persona.objects.all()
     diccionario = {'lista': lista}
 
-    miHtml = open("C:/Users/agroppa/Desktop/py/MVTGroppa/MVTGroppa/plantillas/template1.html")
+    
+    plantilla = loader.get_template('template1.html')
 
-    plantilla = Template(miHtml.read())
 
-    miHtml.close()
 
-    miContexto = Context(diccionario)
-
-    documento = plantilla.render(miContexto)
+    documento = plantilla.render(diccionario)
 
     return HttpResponse (documento)

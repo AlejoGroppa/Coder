@@ -55,7 +55,7 @@ ROOT_URLCONF = 'MVTGroppa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/agroppa/Desktop/py/MVTGroppa/MVTGroppa/plantillas/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
